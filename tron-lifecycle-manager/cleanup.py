@@ -52,7 +52,9 @@ Connect to MongoDB, authenticate, and remove old documents from the database.
         c for c in collections if "transaction" in c or "block" in c or "contract" in c
     ]
     for collection in collections_to_clean:
+        print(f"Cleaning up {collection}")
         db[collection].delete_many({"timeStamp": {"$lt": history_timestamp}})
+        print("Done")
 
 
 if __name__ == "__main__":
