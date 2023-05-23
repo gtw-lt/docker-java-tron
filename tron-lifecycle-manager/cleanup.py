@@ -13,11 +13,11 @@ def get_config() -> Dict[str, Union[str, int, float]]:
         A dictionary containing the configuration values.
     """
     required_vars = {
-        "MONGO_HOST": str,
-        "MONGO_PORT": int,
+        "DB_HOST": str,
+        "DB_PORT": int,
         "MONGO_DBNAME": str,
-        "MONGO_USERNAME": str,
-        "MONGO_PASSWORD": str,
+        "DB_USER": str,
+        "DB_PASSWORD": str,
         "MONGO_RETENTION_DAYS": float,
     }
     config = {k.lower(): required_vars[k](

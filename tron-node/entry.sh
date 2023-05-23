@@ -221,7 +221,7 @@ if [[ "${CONFIG_EVENT_PLUGIN_ENABLED}" == "true" ]]; then
       if [[ "$ind" == "${LAST_INDEX}" ]]; then
         CONFIG_CONTRACT_ADDRESS_FILTER="${CONFIG_CONTRACT_ADDRESS_FILTER}\"${FILTER_ADDRESSES[$ind]}\""
       else
-        CONFIG_CONTRACT_ADDRESS_FILTER="${CONFIG_CONTRACT_ADDRESS_FILTER}\"${FILTER_ADDRESSES[$ind]}\",\n      "
+        CONFIG_CONTRACT_ADDRESS_FILTER="${CONFIG_CONTRACT_ADDRESS_FILTER}\"${FILTER_ADDRESSES[$ind]}\",\n"
       fi
     done
   fi
@@ -235,7 +235,7 @@ if [[ "${CONFIG_EVENT_PLUGIN_ENABLED}" == "true" ]]; then
       if [[ "$ind" == "${LAST_INDEX}" ]]; then
         CONFIG_CONTRACT_TOPIC_FILTER="${CONFIG_CONTRACT_TOPIC_FILTER}\"${FILTER_TOPICS[$ind]}\""
       else
-        CONFIG_CONTRACT_TOPIC_FILTER="${CONFIG_CONTRACT_TOPIC_FILTER}\"${FILTER_TOPICS[$ind]}\",\n      "
+        CONFIG_CONTRACT_TOPIC_FILTER="${CONFIG_CONTRACT_TOPIC_FILTER}\"${FILTER_TOPICS[$ind]}\",\n"
       fi
     done
   fi

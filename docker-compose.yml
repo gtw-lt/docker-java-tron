@@ -54,6 +54,7 @@ services:
     environment:
       NETWORK: mainnet
       DB_HOST: tron-mongodb
+      DB_NAME: eventlog
       DB_PORT: 27017
       DB_USER: ${DB_USER}
       DB_PASSWORD: ${DB_PASSWORD}
