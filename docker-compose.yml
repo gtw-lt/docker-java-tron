@@ -69,9 +69,10 @@ services:
     build:
       context: ./tron-lifecycle-manager/
     environment:
-      DB_HOST: tron-mongodb
-      DB_PORT: 27017
-      DB_USER: ${DB_USER}
-      DB_PASSWORD: ${DB_PASSWORD}
+      MONGO_HOST: tron-mongodb
+      MONGO_DBNAME: eventlog
+      MONGO_PORT: 27017
+      MONGO_USERNAME: ${DB_USER}
+      MONGO_PASSWORD: ${DB_PASSWORD}
     env_file:
       - ./tron.conf
