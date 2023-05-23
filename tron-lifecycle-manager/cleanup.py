@@ -31,13 +31,20 @@ Connect to MongoDB, authenticate, and remove old documents from the database.
     """
     config = get_config()
 
-    mongo = MongoClient(**config)
-    db = mongo[config["mongo_dbname"]]
-    db.authenticate(**config)
+    mongo_client = MongoClient(
+        host=config["mongo_host"],
+        port=config["mongo_port"],
+        username=config["mongo_username"],
+        password=config["mongo_password"],
+    )
+
+    db = mongo_client[config["mongo_dbname"]]
+    retention_days = config["mongo_retention_days"]
+
 
     history_timestamp = int(
         (datetime.now() -
-         timedelta(days=int(config["mongo_retention_days"]))).timestamp() * 1000
+         timedelta(days=int(retention_days))).timestamp() * 1000
     )
     collections = db.list_collection_names()
     collections_to_clean = [
