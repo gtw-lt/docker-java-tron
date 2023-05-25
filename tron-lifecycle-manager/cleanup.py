@@ -35,8 +35,7 @@ Connect to MongoDB, authenticate, and remove old documents from the database.
         host=config["mongo_host"],
         port=config["mongo_port"],
         username=config["mongo_username"],
-        password=config["mongo_password"],
-        authSource=config["mongo_dbname"]
+        password=config["mongo_password"]
     )
 
     db = mongo_client[config["mongo_dbname"]]
